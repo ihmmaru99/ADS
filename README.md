@@ -59,6 +59,19 @@ CARLA 브릿지를 설치하는 25주차에 이 파일을 지운다.
 
 ---
 
+## 알아둘 것 — conda 와 colcon
+
+이 머신은 conda(anaconda3)가 활성화된 상태라 `python3` 가 conda 쪽을 가리킨다.
+그 python 에는 `catkin_pkg` 가 없어서 `colcon build` 를 직접 부르면 다음으로 실패한다.
+
+```
+ModuleNotFoundError: No module named 'catkin_pkg'
+```
+
+`TOOLS/build.sh` 와 `TOOLS/test.sh` 는 실행 중에만 PATH 에서 conda 경로를 걷어내므로
+이 문제를 겪지 않는다. **colcon 을 직접 부르지 말고 이 스크립트를 쓴다.**
+직접 불러야 한다면 먼저 `conda deactivate` 를 한다.
+
 ## 구조
 
 ```
