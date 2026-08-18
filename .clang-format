@@ -1,0 +1,27 @@
+---
+Language: Cpp
+BasedOnStyle: LLVM
+Standard: c++17
+
+# 코딩 가이드라인: 들여쓰기 4칸, 탭 금지, 한 줄 150자 이하
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 150
+
+# 코딩 가이드라인: 여는 중괄호는 블록 시작 줄의 다음 줄에 둔다
+BreakBeforeBraces: Allman
+
+AccessModifierOffset: -4
+PointerAlignment: Left
+ReferenceAlignment: Left
+SpaceBeforeParens: ControlStatements
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+NamespaceIndentation: None
+SortIncludes: false
+IndentCaseLabels: true

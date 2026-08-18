@@ -1,0 +1,25 @@
+# colcon 산출물
+build/
+install/
+log/
+
+# 컴파일 데이터베이스 · 에디터
+compile_commands.json
+.vscode/
+.idea/
+*.swp
+
+# 빌드 부산물
+*.o
+*.a
+*.so
+*.pyc
+__pycache__/
+
+# 기록 데이터 (용량이 크다. 필요하면 별도 보관소로)
+*.bag
+*.db3
+*.mcap
+
+# CARLA 로그
+CarlaUE4/

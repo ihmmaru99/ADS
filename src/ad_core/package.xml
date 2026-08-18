@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ad_core</name>
+  <version>0.0.0</version>
+  <description>기하 · 경로 · 횡종 제어기 · 차량 모델. 순수 C++17 이며 rclcpp 에 의존하지 않는다.</description>
+  <maintainer email="ihmmaru99@gmail.com">ihmmaru99</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+
+  <test_depend>ament_cmake_gtest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
