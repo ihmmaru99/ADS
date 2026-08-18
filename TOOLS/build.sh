@@ -14,6 +14,18 @@ if [[ "${PATH}" == *conda* ]]; then
 fi
 unset PYTHONHOME
 
+# WARNING: CMake 는 Python 인터프리터 경로를 캐시에 박아 둔다. conda 가 켜진 채로
+#          colcon 을 직접 호출한 적이 있으면 그 캐시가 남아, 이 스크립트로 PATH 를
+#          고쳐도 계속 catkin_pkg 오류가 난다. 오염된 캐시만 골라 지운다.
+for cache_file in build/*/CMakeCache.txt; do
+    [ -e "${cache_file}" ] || continue
+    if grep -qE '^Python3_EXECUTABLE.*conda' "${cache_file}"; then
+        poisoned_dir="$(dirname "${cache_file}")"
+        echo "conda 로 오염된 CMake 캐시를 정리한다: ${poisoned_dir}"
+        rm -rf "${poisoned_dir}"
+    fi
+done
+
 # NOTE: ROS2 setup.bash 는 미정의 변수를 참조한다. 이 구간에서만 -u 를 끈다.
 set +u
 # shellcheck disable=SC1091
