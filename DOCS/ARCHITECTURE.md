@@ -71,8 +71,13 @@ CARLA 로 넘어갈 때 바뀌는 것은 `/ad/odometry` 의 발행자와
 
 | CARLA 측 토픽 | 대응 |
 |---|---|
-| `/carla/ego_vehicle/odometry` | → `/ad/odometry` |
-| `/carla/ego_vehicle/vehicle_control_cmd` | ← `ad_carla_adapter` 출력 |
+| `/carla/hero/odometry` | → `/ad/odometry` |
+| `/carla/hero/vehicle_control_cmd` | ← `ad_carla_adapter` 출력 |
+
+> NOTE: 2026-08-21 에 브릿지를 실제로 띄워 확인한 이름이다. ego vehicle 의 role name 이
+> `ego_vehicle` 이 아니라 **`hero`** 다. 브릿지 런치의 `role_name` 파라미터로 바뀌므로
+> 런치 파일에서 리매핑 대상을 파라미터화한다. 하드코딩하지 않는다.
+> odometry 는 약 **10 Hz** 로 나온다 (환경 가이드는 20 Hz 라고 하지만 이 포크의 기본값은 10 Hz).
 
 ---
 
